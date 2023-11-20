@@ -21,3 +21,22 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+
+#ifndef MyHelpers_h
+#define MyHelpers_h
+
+#include <Arduino.h>
+class MyHelpers
+{
+    private:
+    String weekDays[7]={"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+    String months[12]={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+    public:
+    char * string2char(String command);
+    String getDOMSuffix(uint8_t day);
+    String getDateInfoString(time_t rawtime, uint8_t dayOfTheWeek);
+    String getTimeStampString(time_t rawtime,bool showColon);
+};
+
+#endif
